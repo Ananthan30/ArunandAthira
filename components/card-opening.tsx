@@ -156,30 +156,7 @@ export function CardOpening({ children }: CardOpeningProps) {
                   <div className="absolute -inset-2 rounded-full border border-gold/30 animate-pulse" />
                 </motion.div>
 
-                {/* Wedding text */}
-                <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  className="font-sans text-[10px] md:text-xs tracking-[0.3em] text-gold-dark uppercase mb-2"
-                >
-                  Wedding Invitation
-                </motion.p>
-
-                <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                  className="font-serif text-sm md:text-base text-muted-foreground italic"
-                >
-                  August 2nd, 2026
-                </motion.p>
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  className="absolute bottom-8"
-                >
+                {/* Tap to open */}
                   <motion.div
                     animate={{ y: [0, -5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
