@@ -192,11 +192,11 @@ export function CardOpening({ children }: CardOpeningProps) {
         )}
       </AnimatePresence>
 
-      {/* Main content */}
+      {/* Main content with pop-up animation */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isOpened ? 1 : 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        initial={{ opacity: 0, scale: 0.8, y: 50 }}
+        animate={{ opacity: isOpened ? 1 : 0, scale: isOpened ? 1 : 0.8, y: isOpened ? 0 : 50 }}
+        transition={{ duration: 0.6, delay: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
       >
         {children}
       </motion.div>
