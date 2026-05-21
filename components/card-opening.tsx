@@ -157,30 +157,29 @@ export function CardOpening({ children }: CardOpeningProps) {
                 </motion.div>
 
                 {/* Tap to open */}
-                  <motion.div
-                    animate={{ y: [0, -5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                    className="flex flex-col items-center"
-                  >
-                    <div className="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center mb-2">
-                      <svg
-                        className="w-4 h-4 text-gold-dark"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59"
-                        />
-                      </svg>
-                    </div>
-                    <span className="font-sans text-[10px] tracking-[0.15em] text-muted-foreground uppercase">
-                      Tap to Open
-                    </span>
-                  </motion.div>
+                <motion.div
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                  className="flex flex-col items-center"
+                >
+                  <div className="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center mb-2">
+                    <svg
+                      className="w-4 h-4 text-gold-dark"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59"
+                      />
+                    </svg>
+                  </div>
+                  <span className="font-sans text-[10px] tracking-[0.15em] text-muted-foreground uppercase">
+                    Tap to Open
+                  </span>
                 </motion.div>
               </motion.div>
 
