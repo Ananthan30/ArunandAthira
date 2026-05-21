@@ -174,8 +174,6 @@ export function CardOpening({ children }: CardOpeningProps) {
                 >
                   August 2nd, 2026
                 </motion.p>
-
-                {/* Tap to open */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
