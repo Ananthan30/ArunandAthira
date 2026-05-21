@@ -30,13 +30,19 @@ export function CardOpening({ children }: CardOpeningProps) {
 
   return (
     <>
+      {/* Background - Main page content always visible */}
+      <div className="w-full">
+        {children}
+      </div>
+
+      {/* Card overlay - on top of main page */}
       <AnimatePresence>
         {!isOpened && (
           <motion.div
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-b from-amber-50 to-orange-50 overflow-hidden"
+            transition={{ duration: 0.5 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm overflow-hidden"
             style={{ perspective: "1500px" }}
             onClick={handleOpen}
           >
@@ -45,8 +51,8 @@ export function CardOpening({ children }: CardOpeningProps) {
               className="relative w-[85vw] max-w-[400px] aspect-[3/4] cursor-pointer"
               style={{ transformStyle: "preserve-3d" }}
             >
-              {/* Inner content (revealed when card opens) - behind the flaps */}
-              <div className="absolute inset-0 bg-cream rounded-lg shadow-inner flex items-center justify-center overflow-hidden">
+              {/* Inner content (cream background) */}
+              <div className="absolute inset-0 bg-cream rounded-lg shadow-2xl flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 opacity-20">
                   <div className="absolute inset-0 bg-[url('/floral-bg.jpg')] bg-cover bg-center" />
                 </div>
@@ -65,14 +71,11 @@ export function CardOpening({ children }: CardOpeningProps) {
                   className="absolute inset-0 bg-gradient-to-r from-amber-100 via-amber-50 to-orange-50 rounded-l-lg border border-gold/20 shadow-lg"
                   style={{ backfaceVisibility: "hidden" }}
                 >
-                  {/* Decorative pattern on left flap */}
                   <div className="absolute inset-0 flex items-center justify-end pr-4">
                     <div className="w-full h-full border-r border-gold/10" />
                   </div>
                   <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-gold/30" />
                   <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-gold/30" />
-                  
-                  {/* Vertical decorative line */}
                   <div className="absolute right-3 top-8 bottom-8 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
                 </div>
 
@@ -98,14 +101,11 @@ export function CardOpening({ children }: CardOpeningProps) {
                   className="absolute inset-0 bg-gradient-to-l from-amber-100 via-amber-50 to-orange-50 rounded-r-lg border border-gold/20 shadow-lg"
                   style={{ backfaceVisibility: "hidden" }}
                 >
-                  {/* Decorative pattern on right flap */}
                   <div className="absolute inset-0 flex items-center justify-start pl-4">
                     <div className="w-full h-full border-l border-gold/10" />
                   </div>
                   <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-gold/30" />
                   <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-gold/30" />
-                  
-                  {/* Vertical decorative line */}
                   <div className="absolute left-3 top-8 bottom-8 w-px bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
                 </div>
 
@@ -141,7 +141,6 @@ export function CardOpening({ children }: CardOpeningProps) {
                       </div>
                     </div>
                   </div>
-                  {/* Decorative ring around seal */}
                   <div className="absolute -inset-2 rounded-full border border-gold/30 animate-pulse" />
                 </motion.div>
 
@@ -178,28 +177,6 @@ export function CardOpening({ children }: CardOpeningProps) {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* White flash effect */}
-      <AnimatePresence>
-        {showFlash && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[60] bg-white"
-          />
-        )}
-      </AnimatePresence>
-
-      {/* Main content with pop-up animation */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8, y: 50 }}
-        animate={{ opacity: isOpened ? 1 : 0, scale: isOpened ? 1 : 0.8, y: isOpened ? 0 : 50 }}
-        transition={{ duration: 0.6, delay: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
-      >
-        {children}
-      </motion.div>
     </>
   );
 }
