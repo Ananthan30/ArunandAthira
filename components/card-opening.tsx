@@ -177,7 +177,7 @@ export function CardOpening({ children }: CardOpeningProps) {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 1 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
                   className="absolute bottom-8"
                 >
                   <motion.div
