@@ -50,17 +50,6 @@ export function CardOpening({ children }: CardOpeningProps) {
                 <div className="absolute inset-0 opacity-20">
                   <div className="absolute inset-0 bg-[url('/floral-bg.jpg')] bg-cover bg-center" />
                 </div>
-                <div className="text-center z-10 px-6">
-                  <p className="font-sans text-xs tracking-[0.25em] text-gold-dark uppercase mb-4">
-                    You&apos;re Invited
-                  </p>
-                  <h2 className="font-serif text-4xl md:text-5xl text-foreground">
-                    Arun & Athira
-                  </h2>
-                  <p className="font-serif text-sm text-muted-foreground mt-4 italic">
-                    Request the pleasure of your company
-                  </p>
-                </div>
               </div>
 
               {/* Left flap of the card */}
@@ -160,7 +149,7 @@ export function CardOpening({ children }: CardOpeningProps) {
                 <motion.div
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                  className="flex flex-col items-center"
+                  className="flex flex-col items-center mt-12"
                 >
                   <div className="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center mb-2">
                     <svg
